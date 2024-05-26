@@ -1,8 +1,8 @@
 import './App.css'
-import MainImg from "../src/assets/aerial-view-container-cargo-ship-sea.jpg"
-import SecondImg from "../src/assets/top-view-white-plane-boxes.jpg"
-import ThirthImage from "../src/assets/aerial-view-cargo-ship-cargo-container-harbor1920.png"
-import DepoImg from "../src/assets/supply-chain-representation-still-life.jpg"
+import MainImg from "../src/assets/aerial-view-container-cargo-ship-sea886.jpg"
+import SecondImg from "../src/assets/high-angle-forklift-carrying-boxes.jpg"
+import ThirthImage from "../src/assets/1380.jpg"
+import DepoImg from "../src/assets/supply-chain-representation-still-life (2).jpg"
 import { motion } from 'framer-motion'
 import { Box, Flex, Heading, Image, Img, Text } from '@chakra-ui/react'
 import MactekLogo from "../src/assets/logo-mmcs.png"
