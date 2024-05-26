@@ -2,8 +2,8 @@ import './App.css'
 import MainImg from "../src/assets/aerial-view-container-cargo-ship-sea.jpg"
 import SecondImg from "../src/assets/top-view-white-plane-boxes.jpg"
 import ThirthImage from "../src/assets/aerial-view-cargo-ship-cargo-container-harbor1920.png"
-import { delay, motion, transform } from 'framer-motion'
-import { Box, Flex, Heading, Image, Img, Text, transition } from '@chakra-ui/react'
+import {  motion} from 'framer-motion'
+import { Box, Flex, Heading, Image, Img, Text} from '@chakra-ui/react'
 import MactekLogo from "../src/assets/logo-mmcs.png"
 import { CiMenuBurger } from "react-icons/ci";
 function App() {
