@@ -17,7 +17,7 @@ function App() {
       }
     },
     render: {
-      y: -30,
+      y: 0,
       opacity: 1,
       transition: {
         duration: 1,
@@ -82,7 +82,7 @@ function App() {
           <div className='wrapper2'>
             <div className='layer'></div>
             <Image src={ThirthImage} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
-            <Flex flexDir={"column"} alignItems={"center"} h="90%" gap="60px" p={"0px 0"}>
+            <Flex flexDir={"column"} alignItems={"center"} h="90%" gap="60px" p={"25px 0"}>
               <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>Conheca o Atlantis</motion.span>
               <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "90%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "30px 25px" }} >
                 <Heading letterSpacing={"3px"} fontSize={"30px"}>
