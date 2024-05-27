@@ -11,8 +11,9 @@
   height: 100px;
   width: 100%;
   position: fixed;
-  z-index: 30;
+  z-index: 130;
   background-color: rgb(27, 27, 27, 0.8);
+  
 }
 
 .layer{ 

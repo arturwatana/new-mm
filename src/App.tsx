@@ -3,6 +3,7 @@ import MainImg from "../src/assets/aerial-view-container-cargo-ship-sea886.jpg"
 import SecondImg from "../src/assets/high-angle-forklift-carrying-boxes.jpg"
 import ThirthImage from "../src/assets/1380.jpg"
 import DepoImg from "../src/assets/supply-chain-representation-still-life (2).jpg"
+import ContactImg from "../src/assets/2149853139.jpg"
 import { motion } from 'framer-motion'
 import { Box, Flex, Heading, Image, Img, Text } from '@chakra-ui/react'
 import MactekLogo from "../src/assets/logo-mmcs.png"
@@ -118,7 +119,7 @@ function App() {
             <Image src={DepoImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
 
             <Flex flexDir={"column"} alignItems={"center"} h="90%" gap="50px" p={"35px 0"}>
-            <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>Depoimentos</motion.span>
+              <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>Depoimentos</motion.span>
               <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "90%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "30px 25px" }} >
                 <Text>Na MMCS Sistemas©, acreditamos que a tecnologia deve ser acompanhada por um atendimento humano de qualidade. Nossa equipe de suporte é composta por profissionais experientes e dedicados, prontos para entender suas necessidades e oferecer soluções personalizadas. Seja para esclarecer dúvidas técnicas, orientar sobre o uso do Cheetah X© ou oferecer consultoria em logística internacional, estamos aqui para ajudar você a maximizar os benefícios do nosso sistema. Conte conosco para um suporte eficiente, ágil e humano.</Text>
                 <Flex alignItems={"center"} gap="20px" >
@@ -139,13 +140,46 @@ function App() {
                   </Flex>
                 </Flex>
               </motion.div>
-
               <motion.button variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ zIndex: 100, height: `70px`, z: 20, padding: `20px`, background: `#FFB800`, border: `none`, borderRadius: `5px`, fontSize: `20px` }} whileHover={`hover`}>Solicite uma demonstracao</motion.button>
             </Flex>
           </div>
         </Flex>
       </Flex>
-      <footer>
+      <Flex justifyContent={`center`} alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%" zIndex={0}>
+        <div className='wrapper3'>
+          <div className='layer'></div>
+          <Image src={ContactImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
+          <Flex flexDir={"column"} alignItems={"center"} h="90%" w="100%" gap="50px" p={"35px 0"}>
+            <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>Fale Conosco</motion.span>
+            <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "80%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "15px 10px" }} >
+              <Heading fontSize={"14px"} textAlign={"center"}>
+                Entre em contato por e-mail
+              </Heading>
+              <Flex position={"relative"} justifyContent={"center"} >
+                <motion.input style={{ border: "none", borderRadius: "5px", width: "80%" }} />
+                <motion.button style={{ position: "absolute",background: "#FFB800" , borderRadius: "10px 5px 5px 10px",  left: "60%", width: "30%" }} >Enviar</motion.button>
+              </Flex>
+            </motion.div>
+            <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "80%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "15px 10px" }} >
+              <Heading fontSize={"14px"} textAlign={"center"}>
+                Ou por nossos canais oficiais
+              </Heading>
+              <Flex position={"relative"} justifyContent={"start"} flexDir={"column"} gap="10px" >
+                <Flex flexDir={"row"} gap="10px" >
+                  <motion.span style={{ color: "white", zIndex: 100, fontSize: "15px", }}>Telefone:</motion.span>
+                  <motion.span style={{ color: "white", zIndex: 100, fontSize: "15px", }}>(11) 3159.3665</motion.span>
+                </Flex>
+                <Flex flexDir={"row"} gap="10px" alignItems={"center"} >
+                  <motion.span style={{ color: "white", zIndex: 100, fontSize: "15px", }}>Skype:</motion.span>
+                  <motion.button style={{border:"1px solid black", borderRadius:"5px", padding: "3px", background: "#32E1EC", fontSize: "13px"}}>Administracao</motion.button>
+                  <motion.button style={{border:"1px solid black", borderRadius:"5px", padding: "3px", background: "#32E1EC", fontSize: "13px"}}>Administracao</motion.button>
+                </Flex>
+              </Flex>
+            </motion.div>
+          </Flex>
+        </div>
+      </Flex>
+      <footer style={{background: "#222"}}>
         <Flex minH={"500px"}>
 
         </Flex>
