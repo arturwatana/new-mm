@@ -55,7 +55,7 @@ function App() {
             <Img src={MainImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
             <div className="main mt">
               <motion.span variants={animations} initial={{ y: 100, opacity: 0 }} animate={`render`} style={{
-                fontSize: "44px",
+                fontSize: "42px",
                 letterSpacing: `4px`,
                 color: `white`,
                 width: "85%",
@@ -196,15 +196,15 @@ function App() {
           <Flex w="100%" alignItems={"center"} justifyContent={"center"}>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.688398269135!2d-46.647820923914864!3d-23.54370726094536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce584f16be4b11%3A0x4e78065440a55d9a!2sR.%20Marqu%C3%AAs%20de%20Itu%2C%2094%20-%20Higien%C3%B3polis%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001223-001!5e0!3m2!1spt-BR!2sbr!4v1716779903755!5m2!1spt-BR!2sbr" width="300" height="150" style={{ border: 0 }} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </Flex>
-          <Flex flexDirection={"column"} w="80%">
+          <Flex flexDirection={"column"}  alignItems={"start"} justifyContent={"center"} >
             <Text color="white">
               Telefone: (11) 3159.3665
             </Text>
             <Text color="white">
-            Rua marques de Itu, 94 - CJ 92
+              Rua marques de Itu, 94 - CJ 92
             </Text>
             <Text color="white">
-            mmcs@mactek.net
+              mmcs@mactek.net
             </Text>
           </Flex>
         </Flex>
