@@ -61,7 +61,7 @@ function App() {
                 width: "85%",
                 textAlign: `center`
               }}>Transforme a Gestão de Carga com o Atlantis</motion.span>
-              <motion.button variants={animations} custom={1} animate={`render`} initial={{ y: 80, opacity: 0 }} style={{ height: `70px`, z: 20, padding: `20px`, background: `#FFB800`, border: `none`, borderRadius: `5px`, fontSize: `20px` }} whileHover={`hover`}>Solicite uma demonstracao</motion.button>
+              <motion.button variants={animations} custom={1} animate={`render`} initial={{ y: 80, opacity: 0 }} style={{display:"flex", alignItems:"center", height: `60px`, z: 20, padding: `20px`, background: `#FFB800`, border: `none`, borderRadius: `5px`, fontSize: `18px` }} whileHover={`hover`}>Solicite uma demonstracao</motion.button>
             </div>
           </div>
         </Flex>
@@ -83,7 +83,7 @@ function App() {
           <div className='wrapper2'>
             <div className='layer'></div>
             <Image src={ThirthImage} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
-            <Flex flexDir={"column"} alignItems={"center"} h="90%" gap="60px" p={"25px 0"}>
+            <Flex flexDir={"column"} alignItems={"center"} h="90%" gap="60px" p={"35px 0"}>
               <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>Conheca o Atlantis</motion.span>
               <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "90%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "30px 25px" }} >
                 <Heading letterSpacing={"3px"} fontSize={"30px"}>
@@ -109,7 +109,6 @@ function App() {
                   <Text letterSpacing={"1px"} fontSize={"14px"}>Na MMCS Sistemas©, acreditamos que a tecnologia deve ser acompanhada por um atendimento humano de qualidade. Nossa equipe de suporte é composta por profissionais experientes e dedicados, prontos para entender suas necessidades e oferecer soluções personalizadas. Seja para esclarecer dúvidas técnicas, orientar sobre o uso do Cheetah X© ou oferecer consultoria em logística internacional, estamos aqui para ajudar você a maximizar os benefícios do nosso sistema. Conte conosco para um suporte eficiente, ágil e humano.</Text>
                 </Flex>
               </motion.div>
-              <motion.button variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ zIndex: 100, height: `70px`, z: 20, padding: `20px`, background: `#FFB800`, border: `none`, borderRadius: `5px`, fontSize: `20px` }} whileHover={`hover`}>Solicite uma demonstracao</motion.button>
             </Flex>
           </div>
         </Flex>
@@ -149,14 +148,14 @@ function App() {
         <div className='wrapper3'>
           <div className='layer'></div>
           <Image src={ContactImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
-          <Flex flexDir={"column"} alignItems={"center"} h="90%" w="100%" gap="50px" p={"35px 0"}>
+          <Flex flexDir={"column"}  alignItems={"center"} h="90%" w="100%" gap="50px" p={"35px 0"}>
             <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>Fale Conosco</motion.span>
             <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "80%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "15px 10px" }} >
               <Heading fontSize={"14px"} textAlign={"center"}>
                 Entre em contato por e-mail
               </Heading>
               <Flex position={"relative"} justifyContent={"center"} >
-                <motion.input style={{ border: "none", borderRadius: "5px", width: "80%" }} />
+                <motion.input style={{color:"black", border: "none", borderRadius: "5px", width: "80%" }} />
                 <motion.button style={{ position: "absolute",background: "#FFB800" , borderRadius: "10px 5px 5px 10px",  left: "60%", width: "30%" }} >Enviar</motion.button>
               </Flex>
             </motion.div>
