@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { Box, Flex, Heading, Image, Img, Text } from '@chakra-ui/react'
 import MactekLogo from "../src/assets/logo-mmcs.png"
 import { CiMenuBurger } from "react-icons/ci";
+import Slider from './Components/Slider'
 function App() {
 
   const animations = {
@@ -109,6 +110,10 @@ function App() {
                   <Text letterSpacing={"1px"} fontSize={"14px"}>Na MMCS Sistemas©, acreditamos que a tecnologia deve ser acompanhada por um atendimento humano de qualidade. Nossa equipe de suporte é composta por profissionais experientes e dedicados, prontos para entender suas necessidades e oferecer soluções personalizadas. Seja para esclarecer dúvidas técnicas, orientar sobre o uso do Cheetah X© ou oferecer consultoria em logística internacional, estamos aqui para ajudar você a maximizar os benefícios do nosso sistema. Conte conosco para um suporte eficiente, ágil e humano.</Text>
                 </Flex>
               </motion.div>
+              <Flex zIndex={999} flexDir={"column"} gap={"15px"}>
+                <Heading textAlign={'center'} color={"#fff"}>Nossos parceiros</Heading>
+                <Slider/>
+              </Flex>
             </Flex>
           </div>
         </Flex>
