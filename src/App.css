@@ -17,7 +17,7 @@ html {
   position: fixed;
   z-index: 130;
   background-color: rgb(27, 27, 27, 0.8);
-  
+  backdrop-filter: blur(2px);
 }
 
 .layer{ 
