@@ -9,8 +9,12 @@ import { Box, Flex, Heading, Image, Img, Text } from '@chakra-ui/react'
 import MactekLogo from "../src/assets/logo-mmcs.png"
 import { CiMenuBurger } from "react-icons/ci";
 import Slider from './Components/Slider'
+import MenuBurger from './Components/MenuBurger'
+import { useState } from 'react'
+
 function App() {
 
+  const [renderBurguer, setRenderBurger] = useState<boolean>(false)
   const animations = {
     hover: {
       scale: 1.1,
@@ -36,21 +40,25 @@ function App() {
     }
   }
 
+
   return (
     <>
-
-      <motion.header variants={animations} animate={`renderNav`} initial={{ y: -100, opacity: 0 }} className='navbar'>
+    <Flex flexDirection={"column"} h={"100%"} pos={"relative"}>
+      {
+        renderBurguer ?  <MenuBurger setRenderBurger={setRenderBurger} isActive={renderBurguer}  /> : ""
+      }
+      <motion.header variants={animations} animate={`renderNav`} initial={{ y: -100, opacity: 0, position: "fixed" }} className='navbar'>
         <Flex justifyContent={'space-between'} zIndex={100} p={`0 15px`} >
           <Box position={'relative'} w='150px' h="100px"  >
             <Img src={MactekLogo} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`contain`} />
           </Box>
-          <Box>
+          <Box onClick={() => setRenderBurger(!renderBurguer)}>
             <CiMenuBurger style={{ width: `55px`, height: `100px`, color: 'white' }} />
           </Box>
         </Flex >
       </motion.header>
-      <Flex flexDir={`column`} w={`100%`} justifyContent={`center`} alignItems={`center`}>
-        <Flex justifyContent={`center`} alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%">
+      <Flex  flexDir={`column`} w={`100%`} justifyContent={`center`} alignItems={`center`}>
+        <Flex justifyContent={`center`} id="firstSection" alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%">
           <div className='wrapper '>
             <div className='layer'></div>
             <Img src={MainImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
@@ -66,7 +74,7 @@ function App() {
             </div>
           </div>
         </Flex>
-        <Flex justifyContent={`center`} alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%" zIndex={0}>
+        <Flex justifyContent={`center`} id="secondSection" alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%" zIndex={0}>
           <div className='wrapper'>
             <div className='layer'></div>
             <Image src={SecondImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
@@ -80,7 +88,7 @@ function App() {
             </motion.div>
           </div>
         </Flex>
-        <Flex justifyContent={`center`} alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%" zIndex={0}>
+        <Flex justifyContent={`center`} id="thirthSection" alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%" zIndex={0}>
           <div className='wrapper2'>
             <div className='layer'></div>
             <Image src={ThirthImage} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
@@ -112,12 +120,12 @@ function App() {
               </motion.div>
               <Flex zIndex={999} flexDir={"column"} gap={"15px"}>
                 <Heading textAlign={'center'} color={"#fff"}>Nossos parceiros</Heading>
-                <Slider/>
+                <Slider />
               </Flex>
             </Flex>
           </div>
         </Flex>
-        <Flex justifyContent={`center`} alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%" zIndex={0}>
+        <Flex justifyContent={`center`} id="fourthSection" alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%" zIndex={0}>
           <div className='wrapper3'>
             <div className='layer'></div>
             <Image src={DepoImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
@@ -149,7 +157,7 @@ function App() {
           </div>
         </Flex>
       </Flex>
-      <Flex justifyContent={`center`} alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%" zIndex={0}>
+      <Flex justifyContent={`center`} id="fifthSection" alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%" zIndex={0}>
         <div className='wrapper3'>
           <div className='layer'></div>
           <Image src={ContactImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
@@ -201,7 +209,7 @@ function App() {
           <Flex w="100%" alignItems={"center"} justifyContent={"center"}>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.688398269135!2d-46.647820923914864!3d-23.54370726094536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce584f16be4b11%3A0x4e78065440a55d9a!2sR.%20Marqu%C3%AAs%20de%20Itu%2C%2094%20-%20Higien%C3%B3polis%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001223-001!5e0!3m2!1spt-BR!2sbr!4v1716779903755!5m2!1spt-BR!2sbr" width="300" height="150" style={{ border: 0 }} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </Flex>
-          <Flex flexDirection={"column"}  alignItems={"start"} justifyContent={"center"} >
+          <Flex flexDirection={"column"} alignItems={"start"} justifyContent={"center"} >
             <Text color="white">
               Telefone: (11) 3159.3665
             </Text>
@@ -214,6 +222,7 @@ function App() {
           </Flex>
         </Flex>
       </footer>
+      </Flex>
 
     </>
   )
