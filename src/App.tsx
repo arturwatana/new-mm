@@ -22,13 +22,17 @@ function App() {
         duration: 0.3
       }
     },
-    render: {
+    renderItem: {
       y: 0,
       opacity: 1,
       transition: {
         duration: 1,
         delay: 0.7
       }
+    },
+    render: {
+      y: 0,
+      opacity: 1,
     },
     renderNav: {
       y: 0,
@@ -63,14 +67,14 @@ function App() {
             <div className='layer'></div>
             <Img src={MainImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
             <div className="main mt">
-              <motion.span variants={animations} initial={{ y: 100, opacity: 0 }} animate={`render`} style={{
+              <motion.span variants={animations} initial={{ y: 100, opacity: 0 }} animate={`renderItem`} style={{
                 fontSize: "42px",
                 letterSpacing: `4px`,
                 color: `white`,
                 width: "85%",
                 textAlign: `center`
               }}>Transforme a Gestão de Carga com o Atlantis</motion.span>
-              <motion.button variants={animations} custom={1} animate={`render`} initial={{ y: 80, opacity: 0 }} style={{ display: "flex", alignItems: "center", height: `60px`, z: 20, padding: `20px`, background: `#FFB800`, border: `none`, borderRadius: `5px`, fontSize: `18px` }} whileHover={`hover`}>Solicite uma demonstracao</motion.button>
+              <motion.button variants={animations} custom={1} animate={`renderItem`} initial={{ y: 80, opacity: 0 }} style={{ display: "flex", alignItems: "center", height: `60px`, z: 20, padding: `20px`, background: `#FFB800`, border: `none`, borderRadius: `5px`, fontSize: `18px` }} whileHover={`hover`}>Solicite uma demonstracao</motion.button>
             </div>
           </div>
         </Flex>

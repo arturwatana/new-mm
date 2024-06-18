@@ -23,7 +23,7 @@ export default function MenuBurger({ isActive, setRenderBurger }: BurgerProps) {
             x: 0,
             opacity: 1,
             transition: {
-                delay: 0.5 + (i / 5)
+                delay: 0.2 + (i / 5)
             }
         })
     }
@@ -40,7 +40,7 @@ export default function MenuBurger({ isActive, setRenderBurger }: BurgerProps) {
                 <motion.ul  style={{ gap: "20px", display: "flex", flexDirection: "column", listStyle: "none", textAlign: "left", fontSize: "20px"}}>
                     {menuItens.map((item, index) => <motion.a onClick={closeOnRedirect} key={index} href={item.href} initial={{ x: 200, opacity: 0 }} variants={variants} custom={index} animate={isActive ? "renderLi" : ""} style={{cursor: "pointer"}}>{item.name}</motion.a> )}
                 </motion.ul>
-                <motion.div style={{border: "1px solid red", width: "100px", height: "80px", borderRadius: "10px"}}>
+                <motion.div style={{border: "1px solid gray", width: "100px", height: "80px", borderRadius: "10px"}}>
 
                 </motion.div>
             </motion.div>
