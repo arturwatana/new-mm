@@ -6,8 +6,14 @@ type BurgerProps = {
     setRenderBurger: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function MenuBurger({ isActive, setRenderBurger }: BurgerProps) {   
-    const menuItens = [{name: "Inicio", href: "#firstSection"}, {name: "Atlantis", href: "#secondSection"}, {name: "Clientes", href: "#thirthSection"}, {name: "Fale Conosco", href: "#fifthSection"}]
+type MenuItemProps = {
+    name: string
+    scroll: number
+}
+
+export default function MenuBurger({ isActive, setRenderBurger }: BurgerProps) {
+    const menuItens: MenuItemProps[] = [{ name: "Inicio", scroll: 0 }, { name: "Sobre Nós", scroll: 822 }, { name: "Atlantis", scroll: 1588 }, { name: "Depoimentos", scroll: 3189 }, { name: "Fale Conosco", scroll: 4711 }]
+
     const variants = {
         render: {
             x: 0,
@@ -19,7 +25,7 @@ export default function MenuBurger({ isActive, setRenderBurger }: BurgerProps) {
         hideLayer: {
             display: "none"
         },
-        renderLi: (i: number)=>({
+        renderLi: (i: number) => ({
             x: 0,
             opacity: 1,
             transition: {
@@ -28,19 +34,22 @@ export default function MenuBurger({ isActive, setRenderBurger }: BurgerProps) {
         })
     }
 
-    function closeOnRedirect(){
+    function redirectAndClose(e: any) {
+        let itemClicked = menuItens.filter(item => item.name === e.target.firstChild.textContent)[0]
+        window.scrollTo(0, itemClicked.scroll)
         setRenderBurger(false)
+
     }
 
     return (
         <>
-            <motion.div onClick={() => setRenderBurger(false)} style={{ width: "100%", height: "100%",background: "rgb(34, 2, 0, 0.4)", position: "absolute", zIndex: 900 }}>
+            <motion.div onClick={() => setRenderBurger(false)} style={{ width: "100%", height: "100%", background: "rgb(34, 2, 0, 0.4)", position: "absolute", zIndex: 900 }}>
             </motion.div>
-            <motion.div  initial={{ x: 100, opacity: 0 }} animate={isActive ? "render" : "hide"} variants={variants} style={{position: "fixed", zIndex: 999, background: "#f6f6f6", height: "100vh", width: "330px", display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "start", left: "30%", padding: "85px 35px" }}>
-                <motion.ul  style={{ gap: "20px", display: "flex", flexDirection: "column", listStyle: "none", textAlign: "left", fontSize: "20px"}}>
-                    {menuItens.map((item, index) => <motion.a onClick={closeOnRedirect} key={index} href={item.href} initial={{ x: 200, opacity: 0 }} variants={variants} custom={index} animate={isActive ? "renderLi" : ""} style={{cursor: "pointer"}}>{item.name}</motion.a> )}
+            <motion.div initial={{ x: 100, opacity: 0 }} animate={isActive ? "render" : "hide"} variants={variants} style={{ position: "fixed", zIndex: 999, background: "#f6f6f6", height: "100vh", width: "330px", display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "start", left: "30%", padding: "85px 35px" }}>
+                <motion.ul style={{ gap: "20px", display: "flex", flexDirection: "column", listStyle: "none", textAlign: "left", fontSize: "20px" }}>
+                    {menuItens.map((item, index) => <motion.a onClick={(e) => redirectAndClose(e)} key={index} initial={{ x: 200, opacity: 0 }} variants={variants} custom={index} animate={isActive ? "renderLi" : ""} style={{ cursor: "pointer" }}>{item.name}</motion.a>)}
                 </motion.ul>
-                <motion.div style={{border: "1px solid gray", width: "100px", height: "80px", borderRadius: "10px"}}>
+                <motion.div style={{ border: "1px solid gray", width: "100px", height: "80px", borderRadius: "10px" }}>
 
                 </motion.div>
             </motion.div>

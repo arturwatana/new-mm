@@ -11,9 +11,7 @@ import { CiMenuBurger } from "react-icons/ci";
 import Slider from './Components/Slider'
 import MenuBurger from './Components/MenuBurger'
 import { useState } from 'react'
-
 function App() {
-
   const [renderBurguer, setRenderBurger] = useState<boolean>(false)
   const animations = {
     hover: {
@@ -44,10 +42,9 @@ function App() {
     }
   }
 
-
   return (
     <>
-    <Flex flexDirection={"column"} h={"100%"} pos={"relative"}>
+    <Flex flexDirection={"column"} id="wrapperLayout" h={"100%"} pos={"relative"}>
       {
         renderBurguer ?  <MenuBurger setRenderBurger={setRenderBurger} isActive={renderBurguer}  /> : ""
       }
@@ -61,7 +58,7 @@ function App() {
           </Box>
         </Flex >
       </motion.header>
-      <Flex  flexDir={`column`} w={`100%`} justifyContent={`center`} alignItems={`center`}>
+      <Flex  flexDir={`column`} w={`100%`}  justifyContent={`center`} alignItems={`center`}>
         <Flex justifyContent={`center`} id="firstSection" alignItems={`center`} flexDir={`column`} maxW={"1920px"} w="100%">
           <div className='wrapper '>
             <div className='layer'></div>
@@ -122,10 +119,7 @@ function App() {
                   <Text letterSpacing={"1px"} fontSize={"14px"}>Na MMCS Sistemas©, acreditamos que a tecnologia deve ser acompanhada por um atendimento humano de qualidade. Nossa equipe de suporte é composta por profissionais experientes e dedicados, prontos para entender suas necessidades e oferecer soluções personalizadas. Seja para esclarecer dúvidas técnicas, orientar sobre o uso do Cheetah X© ou oferecer consultoria em logística internacional, estamos aqui para ajudar você a maximizar os benefícios do nosso sistema. Conte conosco para um suporte eficiente, ágil e humano.</Text>
                 </Flex>
               </motion.div>
-              <Flex zIndex={999} flexDir={"column"} gap={"15px"}>
-                <Heading textAlign={'center'} color={"#fff"}>Nossos parceiros</Heading>
-                <Slider />
-              </Flex>
+
             </Flex>
           </div>
         </Flex>
@@ -156,6 +150,10 @@ function App() {
                   </Flex>
                 </Flex>
               </motion.div>
+              <Flex zIndex={999} flexDir={"column"} gap={"15px"}>
+                <Heading textAlign={'center'} color={"#fff"}>Nossos parceiros</Heading>
+              <Slider />
+              </Flex>
               <motion.button variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ zIndex: 100, height: `70px`, z: 20, padding: `20px`, background: `#FFB800`, border: `none`, borderRadius: `5px`, fontSize: `20px` }} whileHover={`hover`}>Solicite uma demonstracao</motion.button>
             </Flex>
           </div>
