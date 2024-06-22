@@ -12,8 +12,9 @@ import {
   Button,
   chakra
 } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import { toast } from 'react-toastify';
+import Translator from '../Translator';
 
 type ModalProps = {
   isOpen: boolean
@@ -38,16 +39,13 @@ export default function ModalContact({ isOpen, setOpenModal }: ModalProps) {
       name: e.target.name.value,
       phone: e.target.phone.value,
     })
-    toast.success(`Obrigado ${e.target.name.value.split(" ")[0]}! Nosso time entrara em contato`)
+    toast.success(`Obrigado ${contact?.name.split(" ")[0]}! Nosso time entrara em contato`)
 }
 
 function close(){
   setOpenModal(false)
 }
 
-useEffect(() => {
-  console.log(contact)
-}, [contact])
   return (
     <>
       <Modal
@@ -61,21 +59,21 @@ useEffect(() => {
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl >
-              <FormLabel>Nome</FormLabel>
-              <Input  placeholder='Nome' id="name" />
-              <FormLabel>Empresa</FormLabel>
-              <Input placeholder='Empresa' id="enterprise"   />
+              <FormLabel>{Translator("modal.name")}</FormLabel>
+              <Input  placeholder={Translator("modal.name")}  id="name" />
+              <FormLabel>{Translator("second.empresa")}</FormLabel>
+              <Input placeholder={Translator("modal.empresa")}  id="enterprise"   />
               <FormLabel>Email</FormLabel>
               <Input  placeholder='Email' id="email"  type='email' />
-              <FormLabel >Telefone</FormLabel>
-              <Input  placeholder='Telefone' id="phone" />
+              <FormLabel >{Translator("modal.phone")}</FormLabel>
+              <Input  placeholder={Translator("modal.phone")} id="phone" />
             </FormControl>
           </ModalBody>
           <ModalFooter>
             <Button background='#FFB800' mr={3} type='submit'>
-              Enviar
+            {Translator("modal.text2")}
             </Button>
-            <Button onClick={close}>Cancelar</Button>
+            <Button onClick={close}>{Translator("modal.cancel")}</Button>
           </ModalFooter>
             </chakra.form>
         </ModalContent>

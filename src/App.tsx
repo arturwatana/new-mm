@@ -13,6 +13,7 @@ import MenuBurger from './Components/MenuBurger'
 import { useState } from 'react'
 import ModalContact from './Components/ModalContact'
 import ButtonContact from './Components/ButtonContact'
+import Translator from './Components/Translator'
 
 function App() {
   const [renderBurguer, setRenderBurger] = useState<boolean>(false)
@@ -77,7 +78,7 @@ function App() {
                   color: `white`,
                   width: "85%",
                   textAlign: `center`
-                }}>Transforme a Gestão de Carga com o Atlantis</motion.span>
+                }}>{Translator("first.tittle")}</motion.span>
                 <ButtonContact isOpen={openModal} setOpenModal={setOpenModal} />
               </div>
             </div>
@@ -88,10 +89,10 @@ function App() {
               <Image src={SecondImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
               <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "90%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "30px 25px" }} >
                 <Heading letterSpacing={"3px"} fontSize={"45px"}>
-                  Sobre nós
+                {Translator("second.tittle")}
                 </Heading>
                 <Flex  >
-                  <Text letterSpacing={"1px"} fontSize={"18px"}>Fundada em 2004, a MMCS Sistemas© é hoje uma empresa 100% brasileira. A idéia do desenvolvimento de um software para atender as necessidades dos freight forwarder surgiu ainda antes, em 1997. Pela participação ativa em um escritório de agenciamento de cargas local, a MMCS Sistemas© vislumbrou a necessidade de uma ferramenta que controle os embarques e os faturamentos dos serviços prestados.</Text>
+                  <Text letterSpacing={"1px"} fontSize={"18px"}>{Translator("second.text")}</Text>
                 </Flex>
               </motion.div>
             </div>
@@ -101,29 +102,29 @@ function App() {
               <div className='layer'></div>
               <Image src={ThirthImage} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
               <Flex flexDir={"column"} alignItems={"center"} h="90%" gap="60px" p={"35px 0"}>
-                <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>Conheca o Atlantis</motion.span>
+                <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>{Translator("third.tittle")}</motion.span>
                 <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "90%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "30px 25px" }} >
                   <Heading letterSpacing={"3px"} fontSize={"30px"}>
-                    Módulos diversos
+                  {Translator("third.cardTittle")}
                   </Heading>
                   <Flex  >
-                    <Text letterSpacing={"1px"} fontSize={"14px"}>Conta ainda com um módulo Comercial sólido, com ferramentas que ajudam a gerenciar seu departamento de vendas e oferta de serviços. Os módulos Financeiros do Cheetah (Contas à Pagar, Contas à Receber e Contabilidade) são totalmente desenhados para atender a realidade financeira local para empresas deste segmento. É multi-moeda, facilitando o acerto de contas com qualquer país, e como também é multi-filial, atende perfeitamente empresas que possuem diversos escritórios.</Text>
+                    <Text letterSpacing={"1px"} fontSize={"14px"}>{Translator("third.cardText")}</Text>
                   </Flex>
                 </motion.div>
                 <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "90%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "30px 25px" }} >
                   <Heading letterSpacing={"3px"} fontSize={"30px"}>
-                    Relatórios
+                  {Translator("third.cardTittle2")}
                   </Heading>
                   <Flex  >
-                    <Text letterSpacing={"1px"} fontSize={"14px"}>Indicadores Comerciais: Lista de Cotações, Histórico de Fretes, Company/Routing Order, Atividades dos Clientes, Cotações Aprovadas por vendeddor,Indicadores Operacionais: Lista de Processos, Atracação e Faturamento, Protocolo Representante, Processos em andamento por cliente, Ocorrências de Produtividade,Indicadores Financeiros: Transações Bancárias, Fluxo de Caixa Detalhado, Demurrage, Totais dos Processos, Lista de Invoices, Detalhes do Statement, Invoices por Usuário, Performance Processos, Taxas sem Invoice, Taxas por Processos – Totais.</Text>
+                    <Text letterSpacing={"1px"} fontSize={"14px"}>{Translator("third.cardText2")}</Text>
                   </Flex>
                 </motion.div>
                 <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "90%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "30px 25px" }} >
                   <Heading letterSpacing={"3px"} fontSize={"30px"}>
-                    Suporte Humanizado
+                  {Translator("third.cardTittle3")}
                   </Heading>
                   <Flex  >
-                    <Text letterSpacing={"1px"} fontSize={"14px"}>Na MMCS Sistemas©, acreditamos que a tecnologia deve ser acompanhada por um atendimento humano de qualidade. Nossa equipe de suporte é composta por profissionais experientes e dedicados, prontos para entender suas necessidades e oferecer soluções personalizadas. Seja para esclarecer dúvidas técnicas, orientar sobre o uso do Cheetah X© ou oferecer consultoria em logística internacional, estamos aqui para ajudar você a maximizar os benefícios do nosso sistema. Conte conosco para um suporte eficiente, ágil e humano.</Text>
+                    <Text letterSpacing={"1px"} fontSize={"14px"}>{Translator("third.cardText3")}</Text>
                   </Flex>
                 </motion.div>
 
@@ -136,9 +137,9 @@ function App() {
               <Image src={DepoImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
 
               <Flex flexDir={"column"} alignItems={"center"} h="90%" gap="50px" p={"35px 0"}>
-                <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>Depoimentos</motion.span>
+                <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>{Translator("fourth.tittle")}</motion.span>
                 <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "90%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "30px 25px" }} >
-                  <Text>Na MMCS Sistemas©, acreditamos que a tecnologia deve ser acompanhada por um atendimento humano de qualidade. Nossa equipe de suporte é composta por profissionais experientes e dedicados, prontos para entender suas necessidades e oferecer soluções personalizadas. Seja para esclarecer dúvidas técnicas, orientar sobre o uso do Cheetah X© ou oferecer consultoria em logística internacional, estamos aqui para ajudar você a maximizar os benefícios do nosso sistema. Conte conosco para um suporte eficiente, ágil e humano.</Text>
+                  <Text>{Translator("fourth.cardText")}</Text>
                   <Flex alignItems={"center"} gap="20px" >
                     <Box border="1px solid white" borderRadius={"60px"} p="10px" background={"#fff"} h="50px" w="50px"></Box>
                     <Flex flexDir={"column"}>
@@ -148,7 +149,7 @@ function App() {
                   </Flex>
                 </motion.div>
                 <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "90%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "30px 25px" }} >
-                  <Text>Na MMCS Sistemas©, acreditamos que a tecnologia deve ser acompanhada por um atendimento humano de qualidade. Nossa equipe de suporte é composta por profissionais experientes e dedicados, prontos para entender suas necessidades e oferecer soluções personalizadas. Seja para esclarecer dúvidas técnicas, orientar sobre o uso do Cheetah X© ou oferecer consultoria em logística internacional, estamos aqui para ajudar você a maximizar os benefícios do nosso sistema. Conte conosco para um suporte eficiente, ágil e humano.</Text>
+                  <Text>{Translator("fourth.cardText")}</Text>
                   <Flex alignItems={"center"} gap="20px" >
                     <Box border="1px solid white" borderRadius={"60px"} p="10px" background={"#fff"} h="50px" w="50px"></Box>
                     <Flex flexDir={"column"}>
@@ -158,7 +159,7 @@ function App() {
                   </Flex>
                 </motion.div>
                 <Flex zIndex={999} flexDir={"column"} gap={"15px"}>
-                  <Heading textAlign={'center'} color={"#fff"}>Nossos parceiros</Heading>
+                  <Heading textAlign={'center'} color={"#fff"}>{Translator("fourth.partners")}</Heading>
                   <Slider />
                 </Flex>
                 <ButtonContact isOpen={openModal} setOpenModal={setOpenModal} />
@@ -171,23 +172,23 @@ function App() {
             <div className='layer'></div>
             <Image src={ContactImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
             <Flex flexDir={"column"} alignItems={"center"} h="90%" w="100%" gap="50px" p={"35px 0"}>
-              <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>Fale Conosco</motion.span>
+              <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>{Translator("fifth.tittle")}</motion.span>
               <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "80%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "25px 5px" }} >
                 <Heading fontSize={"14px"} textAlign={"center"}>
-                  Entre em contato por e-mail
+                {Translator("fifth.text")}
                 </Heading>
                 <Flex position={"relative"} justifyContent={"center"} >
                   <motion.input style={{ color: "black", border: "none", borderRadius: "5px", width: "80%" }} />
-                  <motion.button style={{ position: "absolute", background: "#FFB800", borderRadius: "10px 5px 5px 10px", left: "60%", width: "30%" }} >Enviar</motion.button>
+                  <motion.button style={{ position: "absolute", background: "#FFB800", borderRadius: "10px 5px 5px 10px", left: "60%", width: "30%" }} >{Translator("fifth.text2")}</motion.button>
                 </Flex>
               </motion.div>
               <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "80%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "25px 25px" }} >
                 <Heading fontSize={"14px"} textAlign={"center"}>
-                  Ou por nossos canais oficiais
+                {Translator("fifth.text3")}
                 </Heading>
                 <Flex position={"relative"} justifyContent={"start"} flexDir={"column"} gap="10px" >
                   <Flex flexDir={"row"} gap="10px" >
-                    <motion.span style={{ color: "white", zIndex: 100, fontSize: "15px", }}>Telefone:</motion.span>
+                    <motion.span style={{ color: "white", zIndex: 100, fontSize: "15px", }}>{Translator("fifth.phone")}:</motion.span>
                     <motion.span style={{ color: "white", zIndex: 100, fontSize: "15px", }}>(11) 3159.3665</motion.span>
                   </Flex>
                   <Flex flexDir={"row"} gap="10px" alignItems={"center"} >
@@ -207,12 +208,12 @@ function App() {
             </Box>
             <ButtonContact isOpen={openModal} setOpenModal={setOpenModal} />
             <Flex flexDir={"column"} gap="5px" justifyContent={"center"} alignItems={"center"}>
-              <Text color={"white"}>Links Rapidos</Text>
+              <Text color={"white"}>{Translator("fifth.text4")}</Text>
               <ul style={{ color: "white", listStyle: "none", textAlign: "center" }} >
-                <li>Sobre nos</li>
-                <li>Conheca o Atlantis</li>
-                <li>Clientes</li>
-                <li>Fale Conosco</li>
+                <li>{Translator("second.tittle")}</li>
+                <li>{Translator("third.tittle")}</li>
+                <li>{Translator("fourth.tittle")}</li>
+                <li>{Translator("fifth.tittle")}</li>
               </ul>
             </Flex>
             <Flex w="100%" alignItems={"center"} justifyContent={"center"}>
