@@ -5,7 +5,7 @@ import ThirthImage from "../src/assets/1380.jpg"
 import DepoImg from "../src/assets/supply-chain-representation-still-life (2).jpg"
 import ContactImg from "../src/assets/2149853139.jpg"
 import { motion } from 'framer-motion'
-import { Box, Flex, Heading, Image, Img, Text, useDisclosure } from '@chakra-ui/react'
+import { Box, Flex, Heading, Image, Img, Text } from '@chakra-ui/react'
 import MactekLogo from "../src/assets/logo-mmcs.png"
 import { CiMenuBurger } from "react-icons/ci";
 import Slider from './Components/Slider'
