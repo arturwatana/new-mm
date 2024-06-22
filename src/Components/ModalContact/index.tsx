@@ -12,7 +12,7 @@ import {
   Button,
   chakra
 } from '@chakra-ui/react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 type ModalProps = {
   isOpen: boolean
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -27,9 +27,6 @@ type ContactProps = {
 
 export default function ModalContact({ isOpen, setOpenModal }: ModalProps) {
   const [contact, setContact] = useState<ContactProps>({email: "", enterprise: "", name: "", phone: ""})
-
-  const initialRef = useRef(null)
-  const finalRef = useRef(null)
 
   const handleSubmit = (e:any) => {
     e.preventDefault()
@@ -51,8 +48,6 @@ useEffect(() => {
   return (
     <>
       <Modal
-        initialFocusRef={initialRef}
-        finalFocusRef={finalRef}
         isOpen={isOpen}
         onClose={close}
       >
@@ -64,13 +59,13 @@ useEffect(() => {
           <ModalBody pb={6}>
             <FormControl >
               <FormLabel>Nome</FormLabel>
-              <Input ref={initialRef} placeholder='Nome' id="name" />
+              <Input  placeholder='Nome' id="name" />
               <FormLabel>Empresa</FormLabel>
               <Input placeholder='Empresa' id="enterprise"   />
               <FormLabel>Email</FormLabel>
-              <Input ref={initialRef} placeholder='Email' id="email"  type='email' />
+              <Input  placeholder='Email' id="email"  type='email' />
               <FormLabel >Telefone</FormLabel>
-              <Input ref={initialRef} placeholder='Telefone' id="phone" />
+              <Input  placeholder='Telefone' id="phone" />
             </FormControl>
           </ModalBody>
           <ModalFooter>
