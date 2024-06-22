@@ -26,7 +26,7 @@ type ContactProps = {
 }
 
 export default function ModalContact({ isOpen, setOpenModal }: ModalProps) {
-  const [contact, setContact] = useState<ContactProps>({email: "", enterprise: "", name: "", phone: ""})
+  const [contact, setContact] = useState<ContactProps | null>(null)
 
   const handleSubmit = (e:any) => {
     e.preventDefault()
