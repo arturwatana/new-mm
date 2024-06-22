@@ -26,23 +26,26 @@ export default function Slider(){
     }
 
     function prevImg(){
-            setStopAnimation(true)
         setSwipe((prev) => ({...prev, cardInView: prev.cardInView === 0 ? 4 : prev.cardInView -1}))
 
     }
 
     function nextImg(){
-            setStopAnimation(true)
         setSwipe((prev) => ({...prev, cardInView: prev.cardInView === 4 ? 0 : prev.cardInView +1}))
     }
 
 
     useEffect(() => {
-
         if(stopAnimation){
             const interval = setInterval(() => {
+               setStopAnimation(false)
+            }, 5000)
+            return () => clearInterval(interval)
+        }
+        if(!stopAnimation){
+            const interval = setInterval(() => {
                 nextImg()
-            }, 4000)
+            }, 3000)
             return () => clearInterval(interval)
         } 
     }, [stopAnimation])
@@ -53,7 +56,7 @@ export default function Slider(){
     return (
         <>
             <Flex w="100%"  justifyContent={"center"} zIndex={999} >
-                    <Box color="#222"  onClick={() => prevImg()}>
+                    <Box color="#222"  onClick={() => {prevImg(); setStopAnimation(true)}}>
                         <Text fontSize={35} mt={4}  color="#ff6418"><IoIosArrowBack/></Text>
                     </Box>
                 <Flex maxW="700px" overflow={"hidden"}  >
@@ -68,7 +71,7 @@ export default function Slider(){
                         <Image w="160px" fit={"contain"} src={Nuno}/>
                     </motion.div>
                 </Flex>
-                <Box color="#222"  onClick={() => nextImg()}>
+                <Box color="#222"  onClick={() => {nextImg(); setStopAnimation(true)}}>
                         <Text fontSize={35} h="80%"  color="#ff6418"  transform="rotate(180deg)"><IoIosArrowBack/></Text>
                 </Box>
              </Flex>
