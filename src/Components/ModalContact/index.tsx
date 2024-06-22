@@ -13,6 +13,8 @@ import {
   chakra
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
+
 type ModalProps = {
   isOpen: boolean
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -36,6 +38,7 @@ export default function ModalContact({ isOpen, setOpenModal }: ModalProps) {
       name: e.target.name.value,
       phone: e.target.phone.value,
     })
+    toast.success(`Obrigado ${e.target.name.value.split(" ")[0]}! Nosso time entrara em contato`)
 }
 
 function close(){

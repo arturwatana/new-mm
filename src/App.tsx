@@ -13,6 +13,7 @@ import MenuBurger from './Components/MenuBurger'
 import { useState } from 'react'
 import ModalContact from './Components/ModalContact'
 import ButtonContact from './Components/ButtonContact'
+
 function App() {
   const [renderBurguer, setRenderBurger] = useState<boolean>(false)
   const [openModal, setOpenModal] = useState<boolean>(false)
@@ -45,6 +46,7 @@ function App() {
       }
     }
   }
+
 
   return (
     <>
