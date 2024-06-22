@@ -39,11 +39,13 @@ export default function Slider(){
 
     useEffect(() => {
 
-        const interval = setInterval(() => {
-            nextImg()
-        }, 4000)
-        return () => clearInterval(interval)
-    }, [])
+        if(stopAnimation){
+            const interval = setInterval(() => {
+                nextImg()
+            }, 4000)
+            return () => clearInterval(interval)
+        } 
+    }, [stopAnimation])
 
 
     
