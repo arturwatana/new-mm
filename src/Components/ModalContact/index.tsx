@@ -81,7 +81,7 @@ useEffect(() => {
               <Input value={email ? email : ""}  placeholder='Email' id="email"  type='email' />
               <FormLabel mt={3} >{Translator("modal.phone")}</FormLabel>
               <Input  placeholder={Translator("modal.phone")} id="phone" />
-              <FormLabel mt={3} >{Translator("modal.phone")}</FormLabel>
+              <FormLabel mt={3} >{Translator("modal.message")}</FormLabel>
               <Textarea  placeholder={Translator("modal.message")} id="message" />
             </FormControl>
           </ModalBody>
