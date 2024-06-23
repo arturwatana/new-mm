@@ -4,8 +4,6 @@ import Translator from "../Translator"
 import BrazilFlag from "../../assets/brazil-flag-icon.svg"
 import USFlag from "../../assets/united-states-flag-icon.svg"
 import { Img } from "@chakra-ui/react"
-import { IoIosArrowDown } from "react-icons/io";
-import { useState } from "react"
 
 type BurgerProps = {
     isActive: boolean
@@ -18,8 +16,6 @@ type MenuItemProps = {
 }
 
 export default function MenuBurger({ isActive, setRenderBurger }: BurgerProps) {
-    const [currentLanguage, setCurrentLanguage] = useState<string>(Translator("config.language"))
-    const [openLanguage, setOpenLanguage] = useState<boolean>(false)
     const { i18n } = useTranslation()
         function handleChangeLanguage(language: string) {
             i18n.changeLanguage(language)
@@ -58,7 +54,7 @@ export default function MenuBurger({ isActive, setRenderBurger }: BurgerProps) {
                     <motion.ul style={{ gap: "20px", display: "flex", flexDirection: "column", listStyle: "none", textAlign: "left", fontSize: "20px" }}>
                         {menuItens.map((item: MenuItemProps, index: any) => <motion.a className={item.href.replace("#", "")} onClick={(e) => { scrollToTarget(e); setRenderBurger(false) }} key={index} initial={{ x: 200, opacity: 0 }} variants={variants} custom={index} animate={isActive ? "renderLi" : ""} style={{ cursor: "pointer" }}>{item.name}</motion.a>)}
                     </motion.ul>
-                    <motion.div initial={{ x: 200, opacity: 0 }} variants={variants} custom={5} animate={isActive ? "renderLi" : ""}  style={{ height: "80px", borderRadius: "10px", display: openLanguage ? "flex" : "flex", right:"30%", top:"0%", flexDirection: "column", gap: "10px"}}>
+                    <motion.div initial={{ x: 200, opacity: 0 }} variants={variants} custom={5} animate={isActive ? "renderLi" : ""}  style={{ height: "80px", borderRadius: "10px", display:  "flex", right:"30%", top:"0%", flexDirection: "column", gap: "10px"}}>
                         <button style={{width: "50px", borderRadius: "20px"}} onClick={() => handleChangeLanguage("pt-BR")}><Img borderRadius="10px" src={BrazilFlag}/></button>
                         <button style={{width: "50px", borderRadius: "20px"}} onClick={() => handleChangeLanguage("en-US")}><Img borderRadius="10px" src={USFlag}/></button>
                     </motion.div>
