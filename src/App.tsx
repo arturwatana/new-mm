@@ -52,7 +52,7 @@ function App() {
 
   return (
     <>
-      <Flex flexDirection={"column"} id="wrapperLayout" h={"100%"} pos={"relative"} >
+      <Flex flexDirection={"column"} id="wrapperLayout" h={"100%"} pos={"relative"}  >
         {
           renderBurguer ? <MenuBurger setRenderBurger={setRenderBurger} isActive={renderBurguer} /> : ""
         }

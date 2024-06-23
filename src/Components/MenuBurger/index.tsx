@@ -50,13 +50,13 @@ export default function MenuBurger({ isActive, setRenderBurger }: BurgerProps) {
             <>
                 <motion.div onClick={() => setRenderBurger(false)} style={{ width: "100%", height: "100%", background: "rgb(34, 2, 0, 0.4)", position: "absolute", zIndex: 900 }}>
                 </motion.div>
-                <motion.div initial={{ x: 100, opacity: 0 }} animate={isActive ? "render" : "hide"} variants={variants} style={{ position: "fixed", zIndex: 999, background: "#f6f6f6", height: "100vh", width: "330px", display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "start", left: "30%", padding: "85px 35px " }}>
+                <motion.div initial={{ x: 100, opacity: 0 }} animate={isActive ? "render" : "hide"} variants={variants} style={{ position: "fixed", zIndex: 999, background: "#f6f6f6", height: "100%", width: "330px", display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "start", left: "30%", padding: "85px 35px " }}>
                     <motion.ul style={{ gap: "20px", display: "flex", flexDirection: "column", listStyle: "none", textAlign: "left", fontSize: "20px" }}>
                         {menuItens.map((item: MenuItemProps, index: any) => <motion.a className={item.href.replace("#", "")} onClick={(e) => { scrollToTarget(e); setRenderBurger(false) }} key={index} initial={{ x: 200, opacity: 0 }} variants={variants} custom={index} animate={isActive ? "renderLi" : ""} style={{ cursor: "pointer" }}>{item.name}</motion.a>)}
                     </motion.ul>
-                    <motion.div initial={{ x: 200, opacity: 0 }} variants={variants} custom={5} animate={isActive ? "renderLi" : ""}  style={{ height: "80px", borderRadius: "10px", display:  "flex", right:"30%", top:"0%", flexDirection: "column", gap: "10px"}}>
-                        <button style={{width: "50px", borderRadius: "20px"}} onClick={() => handleChangeLanguage("pt-BR")}><Img borderRadius="10px" src={BrazilFlag}/></button>
-                        <button style={{width: "50px", borderRadius: "20px"}} onClick={() => handleChangeLanguage("en-US")}><Img borderRadius="10px" src={USFlag}/></button>
+                    <motion.div initial={{ x: 200, opacity: 0 }} variants={variants} custom={5} animate={isActive ? "renderLi" : ""}  style={{ height: "80px", borderRadius: "10px", display:  "flex", right:"30%", top:"0%", flexDirection: "column", gap: "20px"}}>
+                        <button style={{width: "60px", borderRadius: "20px"}} onClick={() => handleChangeLanguage("pt-BR")}><Img borderRadius="10px" src={BrazilFlag}/></button>
+                        <button style={{width: "60px", borderRadius: "20px"}} onClick={() => handleChangeLanguage("en-US")}><Img borderRadius="10px" src={USFlag}/></button>
                     </motion.div>
                 </motion.div>
             </>
