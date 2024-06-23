@@ -1,5 +1,8 @@
 export default {
     translations: {
+        config: {
+            language: "en-US"
+        },
         first: {
             tittle: 'Transform Cargo Management with Atlantis'
         },

@@ -1,6 +1,9 @@
 
 export default {
     translations: {
+        config: {
+            language: "pt-BR"
+        },
         first: {
             tittle: 'Transforme a Gestão de Carga com o Atlantis'
         },
@@ -40,6 +43,7 @@ export default {
             text2: "Enviar",
             cancel: "Cancelar",
             message: "Mensagem",
+            tittle: "Solicite uma demonstracao"
         },
         burger: {
             home: "Inicio",
@@ -47,6 +51,7 @@ export default {
             atlantis: "Conheca o Atlantis",
             reviews: "Depoimentos",
             contactUs: "Fale Conosco",
+            
         }
     }
 }
