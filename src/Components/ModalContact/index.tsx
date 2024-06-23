@@ -27,7 +27,6 @@ type ContactProps = {
   name: string
   enterprise: string
   email: string
-  phone: string
   message?: string
 }
 
@@ -36,7 +35,6 @@ export default function ModalContact({ isOpen, setOpenModal, email }: ModalProps
     email: "",
     enterprise: "",
     name: "",
-    phone: "",
     message:  ""
   })
 
@@ -46,7 +44,6 @@ export default function ModalContact({ isOpen, setOpenModal, email }: ModalProps
       email: e.target.email.value,
       enterprise: e.target.enterprise.value,
       name: e.target.name.value,
-      phone: e.target.phone.value,
       message: e.target.message.value
     })
     toast.success(`Obrigado ${e.target.name.value.split(" ")[0]}! Nosso time entrara em contato`)
@@ -79,8 +76,6 @@ useEffect(() => {
               <Input placeholder={Translator("modal.empresa")}  id="enterprise"   />
               <FormLabel  mt={3}>Email</FormLabel>
               <Input value={email ? email : ""}  placeholder='Email' id="email"  type='email' />
-              <FormLabel mt={3} >{Translator("modal.phone")}</FormLabel>
-              <Input  placeholder={Translator("modal.phone")} id="phone" />
               <FormLabel mt={3} >{Translator("modal.message")}</FormLabel>
               <Textarea  placeholder={Translator("modal.message")} id="message" />
             </FormControl>
