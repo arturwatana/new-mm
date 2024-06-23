@@ -38,6 +38,8 @@ export default {
             empresa: "Company",
             phone: "Phone",
             text2: "Send",
+            message: "Message",
+            tittle: "Request a Demo",
             cancel: "Cancel"
         },
         burger: {

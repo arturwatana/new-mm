@@ -10,15 +10,17 @@ import {
   FormLabel,
   Input,
   Button,
-  chakra
+  chakra,
+  Textarea
 } from '@chakra-ui/react'
-import {  useState } from 'react'
+import {  useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import Translator from '../Translator';
 
 type ModalProps = {
   isOpen: boolean
-  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>,
+  email?: string
 }
 
 type ContactProps = {
@@ -26,10 +28,17 @@ type ContactProps = {
   enterprise: string
   email: string
   phone: string
+  message?: string
 }
 
-export default function ModalContact({ isOpen, setOpenModal }: ModalProps) {
-  const [contact, setContact] = useState<ContactProps | null>(null)
+export default function ModalContact({ isOpen, setOpenModal, email }: ModalProps) {
+  const [contact, setContact] = useState<ContactProps>({
+    email: "",
+    enterprise: "",
+    name: "",
+    phone: "",
+    message:  ""
+  })
 
   const handleSubmit = (e:any) => {
     e.preventDefault()
@@ -38,13 +47,18 @@ export default function ModalContact({ isOpen, setOpenModal }: ModalProps) {
       enterprise: e.target.enterprise.value,
       name: e.target.name.value,
       phone: e.target.phone.value,
+      message: e.target.message.value
     })
-    toast.success(`Obrigado ${contact?.name.split(" ")[0]}! Nosso time entrara em contato`)
+    toast.success(`Obrigado ${e.target.name.value.split(" ")[0]}! Nosso time entrara em contato`)
 }
 
 function close(){
   setOpenModal(false)
 }
+
+useEffect(() => {
+  console.log(contact) 
+})
 
   return (
     <>
@@ -54,19 +68,21 @@ function close(){
       >
         <ModalOverlay />
         <ModalContent w={"90%"}>
-          <ModalHeader>Solicite uma demonstracao</ModalHeader>
+          <ModalHeader>{Translator("modal.tittle")}</ModalHeader>
             <chakra.form onSubmit={handleSubmit}>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl >
               <FormLabel>{Translator("modal.name")}</FormLabel>
               <Input  placeholder={Translator("modal.name")}  id="name" />
-              <FormLabel>{Translator("second.empresa")}</FormLabel>
+              <FormLabel mt={3}>{Translator("modal.empresa")}</FormLabel>
               <Input placeholder={Translator("modal.empresa")}  id="enterprise"   />
-              <FormLabel>Email</FormLabel>
-              <Input  placeholder='Email' id="email"  type='email' />
-              <FormLabel >{Translator("modal.phone")}</FormLabel>
+              <FormLabel  mt={3}>Email</FormLabel>
+              <Input value={email ? email : ""}  placeholder='Email' id="email"  type='email' />
+              <FormLabel mt={3} >{Translator("modal.phone")}</FormLabel>
               <Input  placeholder={Translator("modal.phone")} id="phone" />
+              <FormLabel mt={3} >{Translator("modal.phone")}</FormLabel>
+              <Textarea  placeholder={Translator("modal.message")} id="message" />
             </FormControl>
           </ModalBody>
           <ModalFooter>

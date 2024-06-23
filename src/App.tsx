@@ -18,6 +18,7 @@ import Translator from './Components/Translator'
 function App() {
   const [renderBurguer, setRenderBurger] = useState<boolean>(false)
   const [openModal, setOpenModal] = useState<boolean>(false)
+  const [email, setEmail] = useState<string>("")
 
   const animations = {
     hover: {
@@ -55,7 +56,7 @@ function App() {
         {
           renderBurguer ? <MenuBurger setRenderBurger={setRenderBurger} isActive={renderBurguer} /> : ""
         }
-        <ModalContact isOpen={openModal} setOpenModal={setOpenModal} />
+        <ModalContact email={email} isOpen={openModal} setOpenModal={setOpenModal} />
         <motion.header variants={animations} animate={`renderNav`} initial={{ y: -100, opacity: 0, position: "fixed" }} className='navbar'>
           <Flex justifyContent={'space-between'} zIndex={100} p={`0 15px`} >
             <Box position={'relative'} w='150px' h="100px"  >
@@ -179,7 +180,7 @@ function App() {
                 </Heading>
                 <Flex position={"relative"} justifyContent={"center"} >
                   <motion.input style={{ color: "black", border: "none", borderRadius: "5px", width: "80%" }} />
-                  <motion.button style={{ position: "absolute", background: "#FFB800", borderRadius: "10px 5px 5px 10px", left: "60%", width: "30%" }} >{Translator("fifth.text2")}</motion.button>
+                  <motion.button onClick={((e: any) => setOpenModal(true))} onChange={(e:any) =>  setEmail(e.target.value)} style={{ position: "absolute", background: "#FFB800", borderRadius: "10px 5px 5px 10px", left: "60%", width: "30%" }} >{Translator("fifth.text2")}</motion.button>
                 </Flex>
               </motion.div>
               <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "80%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "25px 25px" }} >

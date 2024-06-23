@@ -38,7 +38,8 @@ export default {
             empresa: "Empresa",
             phone: "Telefone",
             text2: "Enviar",
-            cancel: "Cancelar"
+            cancel: "Cancelar",
+            message: "Mensagem",
         },
         burger: {
             home: "Inicio",
