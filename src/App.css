@@ -10,7 +10,9 @@ html {
   scroll-behavior: smooth;
 }
 
-
+.no-scroll {
+  overflow: hidden;
+}
 .navbar{
   height: 100px;
   width: 100%;
