@@ -179,8 +179,8 @@ function App() {
                 {Translator("fifth.text")}
                 </Heading>
                 <Flex position={"relative"} justifyContent={"center"} >
-                  <motion.input style={{ color: "black", border: "none", borderRadius: "5px", width: "80%" }} />
-                  <motion.button onClick={(() => setOpenModal(true))} onChange={(e:any) =>  setEmail(e.target.value)} style={{ position: "absolute", background: "#FFB800", borderRadius: "10px 5px 5px 10px", left: "60%", width: "30%" }} >{Translator("fifth.text2")}</motion.button>
+                  <motion.input style={{ color: "black", border: "none", borderRadius: "5px", width: "80%", height: "30px" }} />
+                  <motion.button onClick={(() => setOpenModal(true))} onChange={(e:any) =>  setEmail(e.target.value)} style={{ position: "absolute", height: "30px" , background: "#FFB800", borderRadius: "10px 5px 5px 10px", left: "60%", width: "30%" }} >{Translator("fifth.text2")}</motion.button>
                 </Flex>
               </motion.div>
               <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "80%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "25px 25px" }} >
