@@ -48,6 +48,11 @@ function App() {
       }
     }
   }
+  function scrollToTarget(e: any) {
+    const id = e.target.className
+    const element = document.getElementById(id)
+    element?.scrollIntoView({ behavior: 'smooth' });
+}
 
 
   return (
@@ -59,7 +64,7 @@ function App() {
         <ModalContact email={email} isOpen={openModal} setOpenModal={setOpenModal} />
         <motion.header variants={animations} animate={`renderNav`} initial={{ y: -100, opacity: 0, position: "fixed" }} className='navbar'>
           <Flex justifyContent={'space-between'} zIndex={100} p={`0 15px`} >
-            <Box position={'relative'} w='150px' h="100px"  >
+            <Box as="a" href='/' position={'relative'} w='150px' h="100px"  >
               <Img src={MactekLogo} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`contain`} />
             </Box>
             <Box onClick={() => setRenderBurger(!renderBurguer)}>
@@ -172,7 +177,7 @@ function App() {
           <div className='wrapper3'>
             <div className='layer'></div>
             <Image src={ContactImg} w={`100%`} h={`100%`} pos={`absolute`} objectFit={`cover`} maxW={`1920px`} />
-            <Flex flexDir={"column"} alignItems={"center"} h="90%" w="100%" gap="50px" p={"35px 0"}>
+            <Flex flexDir={"column"}  alignItems={"center"} h="90%" w="100%" gap="50px" p={"35px 0"}>
               <motion.span variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ color: "white", zIndex: 100, fontSize: "30px", }}>{Translator("fifth.tittle")}</motion.span>
               <motion.div variants={animations} custom={1} viewport={{ once: true }} whileInView={"render"} initial={{ y: 80, opacity: 0 }} style={{ width: "80%", zIndex: 100, gap: "10px", display: "flex", flexDirection: "column", border: "2px solid white", color: "white", backgroundColor: '#1A3A6D', borderRadius: "5px", padding: "25px 5px" }} >
                 <Heading fontSize={"14px"} textAlign={"center"}>
@@ -210,11 +215,11 @@ function App() {
             <ButtonContact isOpen={openModal} setOpenModal={setOpenModal} />
             <Flex flexDir={"column"} gap="5px" justifyContent={"center"} alignItems={"center"}>
               <Text color={"white"}>{Translator("fifth.text4")}</Text>
-              <ul style={{ color: "white", listStyle: "none", textAlign: "center" }} >
-                <li>{Translator("second.tittle")}</li>
-                <li>{Translator("third.tittle")}</li>
-                <li>{Translator("fourth.tittle")}</li>
-                <li>{Translator("fifth.tittle")}</li>
+              <ul style={{ color: "white", listStyle: "none", textAlign: "center", display: "flex", flexDirection: "column", gap:"5px" }} >
+                <li className='secondSection' onClick={(e) => { scrollToTarget(e)}}>{Translator("second.tittle")}</li>
+                <li className='thirdSection'  onClick={(e) => { scrollToTarget(e)}}>{Translator("third.tittle")}</li>
+                <li className='fourthSection'  onClick={(e) => { scrollToTarget(e)}}>{Translator("fourth.tittle")}</li>
+                <li className='fifthSection'  onClick={(e) => { scrollToTarget(e)}}>{Translator("fifth.tittle")}</li>
               </ul>
             </Flex>
             <Flex w="100%" alignItems={"center"} justifyContent={"center"}>
@@ -222,10 +227,10 @@ function App() {
             </Flex>
             <Flex flexDirection={"column"} alignItems={"start"} justifyContent={"center"} >
               <Text color="white">
-                Telefone: (11) 3159.3665
+              {Translator("fifth.phone") + ": (11) 3159.3665"}
               </Text>
               <Text color="white">
-                Rua marques de Itu, 94 - CJ 92
+                Rua marques de Itu, 70 - CJ 92
               </Text>
               <Text color="white">
                 mmcs@mactek.net
